@@ -4,22 +4,28 @@ This Action for [yarn](https://yarnpkg.com/en/) enables arbitrary actions with t
 
 ## Usage
 
-An example workflow to build and test:
+An example workflow to lint and test:
 
 ```hcl
-workflow "Build and Test" {
+workflow "Main" {
   on = "push"
-  resolves = ["Build and Test"]
+  resolves = ["Lint", "Test"]
 }
 
-action "Build" {
-  uses = "culturehq/actions-yarn@master"
+action "Install" {
+  uses = "docker://culturehq/actions-yarn:latest"
   args = "install"
 }
 
+action "Lint" {
+  needs = "Install"
+  uses = "docker://culturehq/actions-yarn:latest"
+  args = "lint"
+}
+
 action "Test" {
-  needs = "Build"
-  uses = "culturehq/actions-yarn@master"
+  needs = "Install"
+  uses = "docker://culturehq/actions-yarn:latest"
   args = "test"
 }
 ```
