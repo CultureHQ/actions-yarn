@@ -1,8 +1,8 @@
-FROM kkarczmarczyk/node-yarn:4.3.2-slim
+FROM node:11.4-slim
 
 LABEL version="1.0.0"
-LABEL repository="http://github.com/culturehq/actions-yarn"
-LABEL homepage="http://github.com/culturehq/actions-yarn"
+LABEL repository="http://github.com/CultureHQ/actions-yarn"
+LABEL homepage="http://github.com/CultureHQ/actions-yarn"
 LABEL maintainer="CultureHQ <support@culturehq.com>"
 
 LABEL com.github.actions.name="GitHub Action for yarn"
