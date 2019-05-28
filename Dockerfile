@@ -1,4 +1,4 @@
-FROM node:11.4-slim
+FROM node:12-slim
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/CultureHQ/actions-yarn"
