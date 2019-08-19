@@ -1,5 +1,7 @@
 # GitHub Actions for yarn
 
+[![Build Status](https://github.com/CultureHQ/actions-yarn/workflows/Push/badge.svg)](https://github.com/CultureHQ/actions-yarn/actions)
+
 This Action for [yarn](https://yarnpkg.com/en/) enables arbitrary actions with the `yarn` command-line client. Uses the node 11 docker image as its base.
 
 ## Usage

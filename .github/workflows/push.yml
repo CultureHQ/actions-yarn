@@ -35,9 +35,12 @@ jobs:
     - docker-lint
     - bats-test
     - shell-lint
-    if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@master
+    - name: Filter Master
+      uses: actions/bin/filter@master
+      with:
+        args: branch master
     - name: Docker Build
       uses: actions/docker/cli@master
       with:
