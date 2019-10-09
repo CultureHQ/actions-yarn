@@ -1,4 +1,4 @@
-name: 'Yarn'
+name: 'Yarn CLI'
 description: 'Executes actions using the yarn CLI.'
 author: 'kddeisz'
 runs:
