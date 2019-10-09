@@ -8,28 +8,27 @@ This Action for [yarn](https://yarnpkg.com/en/) enables arbitrary actions with t
 
 An example workflow to lint and test:
 
-```hcl
-workflow "Main" {
-  on = "push"
-  resolves = ["Lint", "Test"]
-}
-
-action "Install" {
-  uses = "docker://culturehq/actions-yarn:latest"
-  args = "install"
-}
-
-action "Lint" {
-  needs = "Install"
-  uses = "docker://culturehq/actions-yarn:latest"
-  args = "lint"
-}
-
-action "Test" {
-  needs = "Install"
-  uses = "docker://culturehq/actions-yarn:latest"
-  args = "test"
-}
+```yaml
+on: push
+name: Main
+jobs:
+  lint-and-test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      uses: CultureHQ/actions-yarn@master
+      with:
+        args: install
+    - name: Lint
+      uses: CultureHQ/actions-yarn@master
+      with:
+        args: lint
+    - name: Test
+      uses: CultureHQ/actions-yarn@master
+      with:
+        args: test
 ```
 
 ## Contributing
