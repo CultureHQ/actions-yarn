@@ -1,3 +1,5 @@
+**Deprecated** - use `actions/setup-node` instead
+
 # GitHub Actions for yarn
 
 [![Build Status](https://github.com/CultureHQ/actions-yarn/workflows/Push/badge.svg)](https://github.com/CultureHQ/actions-yarn/actions)
